@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr" ng-app="bilgisayfam" manifest="/manifest.appcache">
+<head>
+    <meta charset="utf-8">
+    <title>bilgisayfam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="internetteki en iyi sozluk!">
+    <meta name="author" content="tayfun sen">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/project.css" rel="stylesheet" type="text/css" />
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-41155588-1', 'bilgisayfam.com');
+    ga('send', 'pageview');
+    </script>
+</head>
+
+<body ng-controller="ContentController">
+<div class="container">
+    <div id="header" class="noentry-header">
+        <form class="form-search" name="search" method="get" ng-submit="submit()">
+            <label for="search-input">Bilgi Sayfam!</label>
+            <input type="text" id="search-input" autocomplete required class="input-large search-query text-center" name="search" ng-model="keyword" placeholder="kelime giriniz">
+            <button type="submit" id="search-button" class="btn btn-primary btn-large btn-block" data-loading-text="Getiriliyor...">Getir</button>
+        </form>
+    </div> <!-- /header -->
+
+    <div class="content" id="ng-content" ng-cloak ng-show="entry.keyword || entry.error">
+        <h2 class="keyword">{{ entry.keyword }}</h2>
+        <div class="entry-properties">
+            <span class="tags">{{ entry.tags.join(", ") }}</span><span ng-show="entry.tags && entry.extra_info">, </span>
+            <span class="extra-info">{{ entry.extra_info.join(", ") }}</span>
+        </div>
+        <h2 ng-show="entry.error" class="error">{{ entry.error }}</h2>
+        <ol>
+            <li ng-repeat="meaning in entry.meaning">
+                <span class="meaning-tags" ng-show="meaning.tags">{{ meaning.tags.join(", ") }}</span>
+                <span class="meaning-content">{{ meaning.content }}</span>
+            </li>
+        </ol>
+    </div>
+
+
+</div> <!-- /.container -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="phonegap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-resource.min.js"></script>
+<script src="js/services.js" charset="utf-8"></script>
+<script src="js/filters.js" charset="utf-8"></script>
+<script src="js/directives.js" charset="utf-8"></script>
+<script src="js/controllers.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" charset="utf-8"></script>
+<script src="js/app.js" charset="utf-8"></script>
+
+<script>var bilgisayfam = {}; </script>
+</body>
+</html>

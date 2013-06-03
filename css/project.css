@@ -1,0 +1,85 @@
+#header {
+    top: 5%;
+    text-align: center;
+    margin: 1em;
+}
+
+.content {
+    font-size: 1.2em;
+    margin: 1em;
+}
+
+.content li {
+    margin: 2em;
+    line-height: 1.4;
+}
+
+.content h2 {
+    text-align: center;
+}
+
+.form-search input[type="text"] {
+    margin-bottom: 1em;
+}
+
+.form-search label {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0.25em;
+}
+
+.meaning-tags {
+    font-style: italic;
+    font-size: 0.95em;
+    margin-right: 0.5em;
+}
+
+.loading {
+    background: url(/static/img/ajax-loader.gif) 50% 50% no-repeat;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none;
+}
+
+ol {
+    margin: 0;
+}
+
+.entry-properties {
+    font-size: 90%;
+    text-align: center;
+    color: blue;
+    border-bottom: 1px black solid;
+    padding-bottom: 5px;
+}
+
+.tags {
+    font-style: italic;
+}
+
+.extra-info {
+    font-weight: bold;
+}
+
+.keyword {
+    font-family: Garamond, Georgia, serif;
+    font-size: 3em;
+}
+
+.error {
+    color: red;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 35em;
+    }
+
+    #header.noentry-header {
+        width: 35em;
+        position:absolute;
+        top:20%;
+    }
+}
